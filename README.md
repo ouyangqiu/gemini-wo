@@ -8,7 +8,7 @@
 </p>
 <p align="center"><img src="https://img.shields.io/badge/License-CNC--1.0-red.svg" /> <img src="https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/FastAPI-0.110-009688?logo=fastapi&logoColor=white" /> <img src="https://img.shields.io/badge/Vue-3-4FC08D?logo=vue.js&logoColor=white" /> <img src="https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white" /> <img src="https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white" /></p>
 
-<p align="center">支持多账号轮询、注册机、多模态、图像生成与内置管理面板。</p>
+<p align="center">支多模态、图像生成与内置管理面板。</p>
 
 ---
 
@@ -20,7 +20,7 @@
 
 **本工具严禁用于以下行为：**
 - 商业用途或盈利性使用
-- 任何形式的批量操作或自动化滥用（无论规模大小）
+- 任何形式的操作或自动化滥用（无论规模大小）
 - 破坏市场秩序或恶意竞争
 - 违反 Google 服务条款的任何行为
 - 违反 Microsoft 服务条款的任何行为
@@ -47,7 +47,6 @@
 
 - ✅ OpenAI API 完全兼容 - 无缝对接现有工具
 - ✅ 多账号负载均衡 - 轮询与故障自动切换
-- ✅ 自动化账号管理 - 支持自动注册与登录，集成多种临时邮箱，支持无头浏览器模式
 - ✅ 流式输出 - 实时响应
 - ✅ 多模态输入 - 100+ 文件类型（图片、PDF、Office 文档、音频、视频、代码等）
 - ✅ 图片生成 & 图生图 - 模型可配置，Base64 或 URL 返回
@@ -188,8 +187,8 @@ REMOTE_PROJECT_PASSWORD=your_admin_key
 
 | 服务                      | 免费额度                 | 获取方式                                       |
 | ------------------------- | ------------------------ | ---------------------------------------------- |
-| [Neon](https://neon.tech) | 512MB 存储 / 100 CPUH 月 | 注册 → Create Project → 复制 Connection string |
-| [Aiven](https://aiven.io) | 额度更充裕               | 注册 → 创建 PostgreSQL 服务 → 复制连接串       |
+| [Neon](https://neon.tech) | 512MB 存储 / 100 CPUH 月 |  → Create Project → 复制 Connection string |
+| [Aiven](https://aiven.io) | 额度更充裕               |  → 创建 PostgreSQL 服务 → 复制连接串       |
 
 > `postgres://` 和 `postgresql://` 两种格式均可直接使用，无需手动转换。
 
@@ -254,7 +253,7 @@ curl http://localhost:7860/v1/chat/completions \
 
 ## 📧 邮箱提供商配置
 
-项目支持 6 种临时邮箱，用于自动注册账号。在 **管理面板 → 系统设置 → 临时邮箱提供商** 中切换。
+项目支持 6 种临时邮箱，用于。在 **管理面板 → 系统设置 → 临时邮箱提供商** 中切换。
 
 ### Moemail（默认推荐）
 
@@ -269,7 +268,7 @@ curl http://localhost:7860/v1/chat/completions \
 临时邮箱 API 服务，推荐配置自定义域名。
 
 - **域名管理**：[domain.duckmail.sbs](https://domain.duckmail.sbs/)
-- **配置项**：API 地址 + API Key + 注册域名
+- **配置项**：API 地址 + API Key + 域名
 
 ### GPTMail
 
@@ -378,12 +377,12 @@ docker compose up -d
 - `main`：稳定主线（推荐生产部署 API 与前端面板）
 - `beta`：新功能预发布线（会先于 main 更新）
 - `refresh-worker`：独立刷新服务分支（适合本地运行刷新、远端部署 API）
-- `clash-proxy`：Clash 代理场景分支（用于代理网络环境下的注册/刷新）
+- `clash-proxy`：Clash 代理场景分支（用于代理网络环境下的/刷新）
 
 推荐组合：
 
 - 云端部署 `main`/`beta` 提供 API 与管理面板
-- 本地部署 `refresh-worker` 负责账号注册与刷新
+- 本地部署 `refresh-worker` 负责账号与刷新
 - 需要 Clash 代理网络策略时使用 `clash-proxy`
 
 ### Clash 代理场景示例
@@ -400,10 +399,10 @@ docker compose up -d
 
 ## 🌐 Socks5 免费代理池
 
-自动注册/刷新账号时可配置代理以提高成功率。推荐使用免费 Socks5 代理池：
+自动/刷新账号时可配置代理以提高成功率。推荐使用免费 Socks5 代理池：
 
 - **项目地址**：[github.com/Dreamy-rain/socks5-proxy](https://github.com/Dreamy-rain/socks5-proxy)
-- **说明**：免费代理不太稳定，但能一定程度提高注册成功率
+- **说明**：免费代理不太稳定，但能一定程度提高成功率
 - **使用方式**：在管理面板 → 系统设置 → 代理设置中配置
 
 ---
